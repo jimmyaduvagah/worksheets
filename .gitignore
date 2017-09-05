@@ -1,0 +1,11 @@
+.idea
+app/.idea
+server/.idea
+app/bower_components
+venv
+static
+*.pyc
+app_bootstrap
+npm-debug.log
+config.codekit
+code-exe/vendor
