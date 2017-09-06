@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #our appa
     'companies',
     'action_log',
+    'cms_locations',
 ]
 
 MIDDLEWARE = [
