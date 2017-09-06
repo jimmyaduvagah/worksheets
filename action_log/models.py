@@ -6,7 +6,7 @@ import collections
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes import fields
 from jsonfield import JSONField
 
 class Action(models.Model):
@@ -19,7 +19,7 @@ class Action(models.Model):
     date = models.DateTimeField(default=datetime.datetime.utcnow, null=False, blank=False)
     object_id = models.PositiveIntegerField(default=None, null=True, blank=True)
     content_type = models.ForeignKey(ContentType, default=None, null=True, blank=True)
-    content_object = generic.GenericForeignKey('content_type', 'object_id')
+    content_object = fields.GenericForeignKey('content_type', 'object_id')
     headers = JSONField(load_kwargs={'object_pairs_hook': collections.OrderedDict}, null=True, blank=True)
     data = JSONField(load_kwargs={'object_pairs_hook': collections.OrderedDict}, null=True, blank=True)
 

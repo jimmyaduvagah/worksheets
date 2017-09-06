@@ -1,3 +1,17 @@
-from django.shortcuts import render
+from .models import Company
+from rest_framework import serializers
+from time_stream_api.rest_extensions import CreatedModifiedByModelSerializer
 
-# Create your views here.
+
+class CompanySerializer(CreatedModifiedByModelSerializer):
+    class Meta:
+        model = Company
+        # fields = (
+        #     'id',
+        #     'user',
+        #     'project',
+        #     'name',
+        #     'description',
+        #     'work_day_hours',
+        #     'overtime_enabled',
+        # )
