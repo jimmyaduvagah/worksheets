@@ -1,0 +1,33 @@
+<h1>{{ user.first_name }},</h1>
+<p class="lead">The timesheet for {{ payperiod }} was {{ payperiod.get_status_display }}.</p>
+<h2>Details</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Hours</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for wt in work_times %}
+        <tr>
+            <td><b>{{ wt.date|date:"D, M j" }}</b></td>
+            <td>{{ wt.hours }}</td>
+        </tr>
+        {% if wt.user_comment or wt.approver_comment %}
+        <tr>
+            {% if wt.user_comment %}
+                <b>User Comment:</b>
+                {{ wt.user_comment }}
+            {% endif %}
+            {% if wt.approver_comment %}
+                <b>Approver Comment:</b>
+                {{ wt.approver_comment }}
+            {% endif %}
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+<h3><a href="#">View Timesheet</a></h3>
+

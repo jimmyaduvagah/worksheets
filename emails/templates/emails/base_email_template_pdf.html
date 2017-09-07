@@ -1,0 +1,309 @@
+{% load inlinecss %}
+{% load static %}
+{% inlinecss "emails/css/mailchimpv1.css" %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    	<!-- NAME: 1 COLUMN - BANDED -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}TimeStream{% endblock title %}</title>
+        
+    </head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" >
+        <center>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" >
+                <tr>
+                    <td align="center" valign="top" id="bodyCell" >
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" >
+                            <tr>
+                                <td align="center" valign="top" >
+                                    <!-- BEGIN PREHEADER // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" >
+                                        <tr>
+                                        	<td align="center" valign="top" >
+                                                <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" >
+                                                    <tr>
+                                                        <td valign="top" class="preheaderContainer" ><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" >
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" >
+                
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="366" class="mcnTextContentContainer" >
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" >
+                        
+{#                            Short header info...#}
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+                <table align="right" border="0" cellpadding="0" cellspacing="0" width="197" class="mcnTextContentContainer" >
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" >
+                        
+{#                            <a href="*|ARCHIVE|*" target="_blank" >View this email in your browser</a>#}
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                            </td>                                            
+                                        </tr>
+                                    </table>
+                                    <!-- // END PREHEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" >
+                                    <!-- BEGIN HEADER // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" >
+                                        <tr>
+                                            <td align="center" valign="top" >
+                                                <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" >
+                                                    <tr>
+                                                        <td valign="top" class="headerContainer" ><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock" >
+    <tbody class="mcnCaptionBlockOuter">
+        <tr>
+            <td class="mcnCaptionBlockInner" valign="top" >
+                
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightContentOuter" width="100%" >
+    <tbody><tr>
+        <td valign="top" class="mcnCaptionRightContentInner" >
+            <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" >
+                <tbody><tr>
+                    <td class="mcnCaptionRightImageContent" valign="top" >
+                    
+                        
+
+{#                        <img alt="TimeStream from Prospect 33" src="https://gallery.mailchimp.com/079428a3c490f05cb1c21a9ba/images/9bf3acac-565d-411f-aad2-c2e19b2e3011.png" width="264"  class="mcnImage">#}
+                        
+
+                    
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class="mcnCaptionRightTextContentContainer" align="right" border="0" cellpadding="0" cellspacing="0" width="264" >
+                <tbody><tr>
+                    <td valign="top" class="mcnTextContent" >
+                        {% block template_title %}Template Name{% endblock template_title%}
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END HEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" >
+                                    <!-- BEGIN BODY // -->{% block body %}
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" >
+                                        <tr>
+                                            <td align="center" valign="top" >
+                                                <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" >
+                                                    <tr>
+                                                        <td valign="top" class="bodyContainer" ><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" >
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" >
+                
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer" >
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" >
+                        
+                            <div class="h1" >{{ user.first_name }},</div>
+
+<div class="h2" >The timesheet for {{ payperiod }} was {{ action }}.</div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" >
+    <tbody class="mcnDividerBlockOuter">
+        <tr>
+            <td class="mcnDividerBlockInner" >
+                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" >
+                    <tbody><tr>
+                        <td >
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" >
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" >
+                
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer" >
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" >
+                        
+                            <h2 >Details</h2>
+
+                        {% for wt in work_times %}
+                            
+                            {% if wt.user_comment or wt.approver_comment %}
+                            
+                            {% endif %}
+                        {% endfor %}
+                        <table >
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Hours</th>
+                        </tr>
+                        </thead>
+                        <tbody><tr>
+                                <td ><b>{{ wt.date|date:"D, M j" }}</b></td>
+                                <td >{{ wt.hours }}</td>
+                            </tr><tr>
+                                <td colspan="2" >
+                                {% if wt.user_comment %}
+                                    <b>User Comment:</b>
+                                    {{ wt.user_comment }}
+                                {% endif %}
+                                {% if wt.approver_comment %}
+                                    <b>Approver Comment:</b>
+                                    {{ wt.approver_comment }}
+                                {% endif %}
+                                </td>
+                            </tr></tbody>
+                    </table>
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" >
+    <tbody class="mcnButtonBlockOuter">
+        <tr>
+            <td  valign="top" align="center" class="mcnButtonBlockInner">
+                <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" >
+                    <tbody>
+                        <tr>
+                            <td align="center" valign="middle" class="mcnButtonContent" >
+                                <a class="mcnButton " title="View Time Sheet" href="http://" target="_blank" >View Time Sheet</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" >
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" >
+                
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer" >
+                    <tbody><tr>
+                        
+                        <td valign="top" class="mcnTextContent" >
+                        
+                            
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>{% endblock body %}
+                                    <!-- // END BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top" >
+                                    <!-- BEGIN FOOTER // -->{% block footer %}
+{#                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" >#}
+{#                                        <tr>#}
+{#                                            <td align="center" valign="top" >#}
+{#                                                <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" >#}
+{#                                                    <tr>#}
+{#                                                        <td valign="top" class="footerContainer" ><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" >#}
+{#    <tbody class="mcnTextBlockOuter">#}
+{#        <tr>#}
+{#            <td valign="top" class="mcnTextBlockInner" >#}
+{#                #}
+{#                <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer" >#}
+{#                    <tbody><tr>#}
+{#                        #}
+{#                        <td valign="top" class="mcnTextContent" >#}
+{#                        #}
+{#                            <em>Copyright  *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em><br>#}
+{#*|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*<br>#}
+{#<br>#}
+{#<strong>Our mailing address is:</strong><br>#}
+{#*|HTML:LIST_ADDRESS_HTML|* *|END:IF|*<br>#}
+{#<br>#}
+{#Want to change how you receive these emails?<br>#}
+{#You can <a href="*|UPDATE_PROFILE|*" >update your preferences</a> or <a href="*|UNSUB|*" >unsubscribe from this list</a><br>#}
+{#<br>#}
+{#*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                </tbody></table>#}
+{#                #}
+{#            </td>#}
+{#        </tr>#}
+{#    </tbody>#}
+{#</table></td>#}
+{#                                                    </tr>#}
+{#                                                </table>#}
+{#                                            </td>#}
+{#                                        </tr>#}
+{#                                    </table>#}
+                                    {% endblock footer %}<!-- // END FOOTER -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>
+{% endinlinecss %}

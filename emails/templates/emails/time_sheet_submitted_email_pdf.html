@@ -1,0 +1,212 @@
+{#{% extends 'emails/base_email_template_pdf.html' %}#}
+{% load time_stream_tags %}
+{% block template_title %}Timesheet {{ action }}{% endblock %}
+<!-- BEGIN BODY // -->{% block body %}
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+        <tr>
+            <td align="center" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer">
+                    <tr>
+                        <td valign="top" class="bodyContainer">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                    <td valign="top" class="mcnTextBlockInner">
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="600"
+                                               class="mcnTextContentContainer">
+                                            <tbody>
+                                            <tr>
+
+                                                <td valign="top" class="mcnTextContent">
+
+                                                    <div class="h1">{{ user.first_name }},</div>
+
+                                                    <div class="h2">{{ payperiod.user.first_name }} {{ payperiod.user.last_name }}'s
+                                                        Time Sheet for Pay Period
+                                                        <b>{{ payperiod.start_date|user_locale_day_month:user }}
+                                                            to {{ payperiod.end_date|user_locale_day_month:user }}</b>
+                                                        was {{ action }}.
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock">
+                                <tbody class="mcnDividerBlockOuter">
+                                <tr>
+                                    <td class="mcnDividerBlockInner">
+                                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0"
+                                               width="100%">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span></span>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            {% if reason %}
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                       class="mcnBoxedTextBlock">
+                                    <!--[if gte mso 9]>
+	<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+	<![endif]-->
+                                    <tbody class="mcnBoxedTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnBoxedTextBlockInner">
+
+                                            <!--[if gte mso 9]>
+				<td align="center" valign="top" ">
+				<![endif]-->
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                   class="mcnBoxedTextContentContainer">
+                                                <tbody>
+                                                <tr>
+
+                                                    <td>
+
+                                                        <table border="0" cellpadding="18" cellspacing="0"
+                                                               class="mcnTextContentContainer" width="100%">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td valign="top" class="mcnTextContent">
+                                                                    <b>{{ action }} Reason: </b>{{ reason }}
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--[if gte mso 9]>
+				</td>
+				<![endif]-->
+
+                                            <!--[if gte mso 9]>
+                </tr>
+                </table>
+				<![endif]-->
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            {% else %}
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner">
+
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="600"
+                                                   class="mcnTextContentContainer">
+                                                <tbody>
+                                                <tr>
+
+                                                    <td valign="top" class="mcnTextContent">
+
+                                                        <h2>Details</h2>
+
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Date</th>
+                                                                <th>Hours</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            {% for wt in work_times %}
+                                                                <tr>
+                                                                    <td class="w50">
+                                                                        <b>{{ wt.date|user_locale_weekday_day_month:user }}</b>
+                                                                    </td>
+                                                                    <td class="w50">{{ wt.hours }}</td>
+                                                                </tr>
+
+                                                                {% if wt.user_comment or wt.approver_comment %}
+                                                                    <tr>
+                                                                        <td>
+                                                                            {% if wt.user_comment %}
+                                                                                <b>User Comment:</b><br/>
+                                                                                {{ wt.user_comment }}
+                                                                            {% endif %}
+                                                                            {% if wt.approver_comment %}
+                                                                                <b>Approver Comment:</b><br/>
+                                                                                {{ wt.approver_comment }}
+                                                                            {% endif %}
+                                                                        </td>
+                                                                        <td>&nbsp;</td>
+                                                                    </tr>{% endif %}
+                                                            {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock">
+                            {% endif %}
+                            <tbody class="mcnButtonBlockOuter">
+                            <tr>
+                                <td valign="top" align="center" class="mcnButtonBlockInner">
+                                    <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer">
+                                        <tbody>
+                                        <tr>
+                                            <td align="center" valign="middle" class="mcnButtonContent">
+                                                <a class="mcnButton " title="View Time Sheet"
+                                                   href="https://app-timestream.prospect33.com/app/desktop.html#/app/job/payperiod/{{ payperiod.id }}"
+                                                   target="_blank">View Time Sheet</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                    <td valign="top" class="mcnTextBlockInner">
+
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="600"
+                                               class="mcnTextContentContainer">
+                                            <tbody>
+                                            <tr>
+
+                                                <td valign="top" class="mcnTextContent">
+
+
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>{% endblock body %}
+<!-- // END BODY -->

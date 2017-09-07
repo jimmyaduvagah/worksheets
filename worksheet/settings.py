@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'cms_locations',
     'dbmq',
     'drf_users',
+    'emails',
 ]
 
 MIDDLEWARE = [
