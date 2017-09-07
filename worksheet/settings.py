@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'action_log',
     'cms_locations',
     'dbmq',
+    'drf_users',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR+'/media/'
+MEDIA_URL = '/media/uploads/'
+MEDIA_ROOT = BASE_DIR+'/media/uploads'
